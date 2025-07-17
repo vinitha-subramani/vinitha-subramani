@@ -748,6 +748,7 @@ html {
 .slick-dots li.slick-active {
     background: var(--primary-color);
     opacity: 1;
+    filter: alpha(opacity=100);
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
@@ -2724,7 +2725,7 @@ ul.blog_pagination li a:hover {
 }
 
 .single-side-bar ul li a:hover {
-    color: #fff opacity: 1;
+    color: #fff;
 }
 
 .single-blog-social-icon {
@@ -3006,4 +3007,42 @@ ul.blog_pagination li a:hover {
     border-radius: 14px;
     padding: 25px;
     border: 1px solid var(--border-color);
+}
+
+
+/* Menu styling */
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.menu a {
+  position: relative;
+  text-decoration: none;
+  font-size: 18px;
+  color: #000;
+  transition: color 0.3s ease;
+  padding-bottom: 5px;
+}
+
+/* Animated underline */
+.menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+/* Hover effect */
+.menu a:hover {
+  color: #fff; /* Keep same color */
+}
+
+.menu a:hover::after {
+  width: 100%;
 }
